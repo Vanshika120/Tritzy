@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Predict Wheat Disease - Tritizy Wheat AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div data-include-html="navbar.html"></div>
+
+  <main class="container">
+    <h1>Predict Wheat Disease</h1>
+    <form id="predict-form"action="http://localhost:8000/predict"
+      method="post"
+      enctype="multipart/form-data">
+      <label for="file">Upload Wheat Leaf Image:</label>
+      <input type="file" id="file" name="file" accept="image/*" required />
+
+      <label for="city">Enter City Name:</label>
+      <input type="text" id="city" name="city" placeholder="e.g. Delhi" required />
+
+      <label for="shade_level">Shade Level Near Crop:</label>
+      <select id="shade_level" name="shade_level" required>
+        <option value="" disabled selected>Select shade level</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+
+      <label for="irrigation">Is the Field Irrigated?</label>
+      <select id="irrigation" name="irrigation" required>
+        <option value="" disabled selected>Select irrigation status</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <button type="submit">Predict Disease & Risk</button>
+    </form>
+
+    <div id="result" class="results" style="display:none;"></div>
+  </main>
+
+  <div data-include-html="footer.html"></div>
+  <script src="script.js"></script>
+
+</body>
+</html>

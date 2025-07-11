@@ -1,0 +1,7 @@
+wheatenv/
+__pycache__/
+*.pyc
+*.pyd
+*.dll
+*.so
+*.egg-info/
